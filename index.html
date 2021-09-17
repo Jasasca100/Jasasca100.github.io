@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>testes João1</title>
+<style type="text/css">
+body{
+background-image: url("https://r2pg.com.br/wp-content/uploads/2016/11/BG-Fantasy-landscape-7.jpg");
+background-size: cover;
+backgroud-repeat:no-repeat;
+background-color: #00000F;
+font-size: 100px;
+text-align:center;
+}
+label{
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: #ffffff;
+}
+p{
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: #ffffff;
+}
+button{
+background-color:#EEAD2D;
+border-radius:10px;
+border:none;
+width: 100px;
+height: 25px;
+}
+button:hover{
+background-color:#B8860B;
+}
+
+@media (max-width:600px){
+body {
+font-size:70px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+input{
+border-radius:8px;
+border:none;
+width:50%;
+height:50px;
+font-size:50px;
+text-align:center;
+}
+}
+</style>
+</head>
+<body>
+<label name="label" id="label">Quantos lados tem o seu dado?</label>
+<br>
+<input type="number" name="input" id="input">
+<br>
+<button  name="butao" id="butao" onclick="clickar()">Refresh</button>
+<p id="linhaPrincipal"><p>
+<script>
+	var input = document.getElementById("input");
+	var label = document.getElementById("label");
+
+	function clickar(){
+	if (input.value <= 0){
+	alert("Digite um número diferente de 0");
+	
+}
+	else{
+	var numeroAleatorio = Math.floor(Math.random()*input.value+1);
+
+ 	if (numeroAleatorio >= 1){
+	document.getElementById("linhaPrincipal").innerHTML ="Seu dado deu "+numeroAleatorio;
+}
+	else{
+	numeroAleatorio=numeroAleatorio+1;
+	document.getElementById("linhaPrincipal").innerHTML ="Seu dado deu "+numeroAleatorio;
+}
+}
+	console.log(numeroAleatorio);
+} 	
+</script>
+</body>
+</html>
